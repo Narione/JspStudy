@@ -43,9 +43,9 @@ public class DBCPInit extends HttpServlet {
 	 */
 	private void initConnectionPool() {
 		try {
-		String connectionUri = "jdbc:oracle:thin:@nextit.or.kr:1521:xe";
-		String userName = "std124";
-		String userPassword = "oracle21c";
+		String connectionUri = getInitParameter("uri");
+		String userName = getInitParameter("name");
+		String userPassword = getInitParameter("password");
 		DriverManagerConnectionFactory connectionFactory = new DriverManagerConnectionFactory(connectionUri, userName, userPassword);
 		PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connectionFactory, null);
 		poolableConnFactory.setValidationQuery("select 1 from dual");

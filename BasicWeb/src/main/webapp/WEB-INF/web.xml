@@ -26,7 +26,16 @@
   			<param-value>oracle.jdbc.OracleDriver</param-value>
   		</init-param>
   		<init-param>
-  			
+  			<param-name>uri</param-name>
+  			<param-value>jdbc:oracle:thin:@nextit.or.kr:1521:xe</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>name</param-name>
+  			<param-value>std124</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>password</param-name>
+  			<param-value>oracle21c</param-value>
   		</init-param>
   		<load-on-startup>1</load-on-startup>
   </servlet>
