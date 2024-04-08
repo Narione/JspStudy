@@ -37,6 +37,10 @@
   			<param-name>password</param-name>
   			<param-value>oracle21c</param-value>
   		</init-param>
+  		<init-param>
+  			<param-name>poolName</param-name>
+  			<param-value>chapter17</param-value>
+  		</init-param>
   		<load-on-startup>1</load-on-startup>
   </servlet>
   

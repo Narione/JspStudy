@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.time.Duration;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
 import org.apache.commons.dbcp2.DriverManagerConnectionFactory;
@@ -15,7 +17,14 @@ import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
-
+@WebServlet(loadOnStartup = 1,
+		initParmas = {
+				@WebInitParam(name = "jdbcdriver", value="oracle.jdbc.OracleDriver"),
+				@WebInitParam(name = "uri", value = "jdbc:oracle:thin:@nextit.or.kr:1521:xe"),
+				@WebInitParam(name = "name", value = "std124"),
+				@WebInitParam(name = "password", value = "oracle21c"),
+				@WebInitParam(name = "poolName",value = "chapter17")
+		})
 public class DBCPInit extends HttpServlet {
 	
 	public void init() throws ServletException {
@@ -42,10 +51,10 @@ public class DBCPInit extends HttpServlet {
 	 * 커넥션풀을 이용해서 데이터베이스 연결
 	 */
 	private void initConnectionPool() {
-		try {
 		String connectionUri = getInitParameter("uri");
 		String userName = getInitParameter("name");
 		String userPassword = getInitParameter("password");
+		try {
 		DriverManagerConnectionFactory connectionFactory = new DriverManagerConnectionFactory(connectionUri, userName, userPassword);
 		PoolableConnectionFactory poolableConnFactory = new PoolableConnectionFactory(connectionFactory, null);
 		poolableConnFactory.setValidationQuery("select 1 from dual");
@@ -60,7 +69,8 @@ public class DBCPInit extends HttpServlet {
 		
 		Class.forName("org.apache.commons.dbcp2.PoolingDriver");
 		PoolingDriver driver = (PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
-		driver.registerPool("chapter17", (ObjectPool<? extends Connection>) connectionPool);
+		String poolName = getInitParameter(poolName);
+		driver.registerPool("poolName", (ObjectPool<? extends Connection>) connectionPool);
 		}catch(Exception e) {
 			throw new RuntimeException(e);
 		}
