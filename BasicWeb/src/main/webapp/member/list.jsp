@@ -19,8 +19,8 @@
 	</tr>
 	<c:forEach var="member" items="${members }">
 	<tr>
-		<td>${member.id }</td>
-		<td>${member.name }</td>
+		<td><a href="/member/view?id=${member.id }">${member.id }</a></td>
+		<td><a href="/member/view?id=${member.id }">${member.name }</a></td>
 		<td>${member.email }</td>
 		<td>${member.createDate }</td>
 	</tr>

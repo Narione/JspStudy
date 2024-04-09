@@ -11,6 +11,7 @@ public class MemberVO {
 
 	
 	public MemberVO() {
+		
 	}
 	
 	public MemberVO(String id, String name, String email, LocalDate createDate) {
@@ -20,6 +21,15 @@ public class MemberVO {
 		this.createDate = createDate;
 	}
 	
+	
+	
+	public MemberVO(String id, String name, String password, String email) {
+		this.id = id;
+		this.name = name;
+		this.password = password;
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
 		return "memberVO [id=" + id + ", name=" + name + ", password=" + password + ", email=" + email + ", createDate="

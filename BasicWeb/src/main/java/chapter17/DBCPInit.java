@@ -17,14 +17,14 @@ import org.apache.commons.pool2.ObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
-@WebServlet(loadOnStartup = 1,
-		initParmas = {
-				@WebInitParam(name = "jdbcdriver", value="oracle.jdbc.OracleDriver"),
-				@WebInitParam(name = "uri", value = "jdbc:oracle:thin:@nextit.or.kr:1521:xe"),
-				@WebInitParam(name = "name", value = "std124"),
-				@WebInitParam(name = "password", value = "oracle21c"),
-				@WebInitParam(name = "poolName",value = "chapter17")
-		})
+//@WebServlet(loadOnStartup = 1,
+//		initParmas = {
+//				@WebInitParam(name = "jdbcdriver", value="oracle.jdbc.OracleDriver"),
+//				@WebInitParam(name = "uri", value = "jdbc:oracle:thin:@nextit.or.kr:1521:xe"),
+//				@WebInitParam(name = "name", value = "std124"),
+//				@WebInitParam(name = "password", value = "oracle21c"),
+//				@WebInitParam(name = "poolName",value = "chapter17")
+//		})
 public class DBCPInit extends HttpServlet {
 	
 	public void init() throws ServletException {
@@ -69,7 +69,7 @@ public class DBCPInit extends HttpServlet {
 		
 		Class.forName("org.apache.commons.dbcp2.PoolingDriver");
 		PoolingDriver driver = (PoolingDriver) DriverManager.getDriver("jdbc:apache:commons:dbcp:");
-		String poolName = getInitParameter(poolName);
+		String poolName = getInitParameter("poolName");
 		driver.registerPool("poolName", (ObjectPool<? extends Connection>) connectionPool);
 		}catch(Exception e) {
 			throw new RuntimeException(e);
