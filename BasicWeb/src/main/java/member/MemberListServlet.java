@@ -32,7 +32,7 @@ public class MemberListServlet extends HttpServlet {
 			Class.forName("oracle.jdbc.OracleDriver");
 			connection = DriverManager.getConnection("jdbc:oracle:thin:@nextit.or.kr:1521:xe","std124","oracle21c");
 			statement = connection.createStatement();
-			String sql = "select id, name, email, create_date from member";
+			String sql = "select id, name, email, create_date from member order by create_date";
 			resultSet = statement.executeQuery(sql);
 			while  (resultSet.next()) {
 				String id = resultSet.getString("id");
