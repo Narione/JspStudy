@@ -40,7 +40,8 @@ public class EmployeeServelet extends HttpServlet {
 			Class.forName("oracle.jdbc.OracleDriver");
 
 			// 2. 접속 정보를 가지고 접속
-			Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@nextit.or.kr:1521:xe","std124","oracle21c");
+//			Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@nextit.or.kr:1521:xe","std124","oracle21c");
+			Connection connection = DriverManager.getConnection("jdbc:apache:commons:dbcp:chapter17");
 
 			//3. 작업 편집기(워크시트)를 생성해준다.
 			Statement statement = connection.createStatement();
