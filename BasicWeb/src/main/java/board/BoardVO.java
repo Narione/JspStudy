@@ -1,10 +1,8 @@
 package board;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class BoardVO {
-	
 	private int no;
 	private String writer;
 	private String title;
@@ -12,9 +10,13 @@ public class BoardVO {
 	private LocalDate createDate;
 	private LocalDate modifyDate;
 	private int hits;
-	
-	//기본 생성자
+
+	// 기본 생성자
 	public BoardVO() {
+	}
+	
+	public BoardVO(int no2, String writer2, String title2, LocalDate localDate, int hits2) {
+		
 	}
 	
 	
@@ -24,9 +26,6 @@ public class BoardVO {
 		this.title = title;
 		this.content = content;
 	}
-
-
-	
 	// update용 생성자
 	public BoardVO(int no, String writer, String title, String content) {
 		this.no = no;
@@ -34,8 +33,6 @@ public class BoardVO {
 		this.title = title;
 		this.content = content;
 	}
-
-
 	// select용 생성자
 	public BoardVO(int no, String writer, String title, String content, LocalDate createDate, LocalDate modifyDate,
 			int hits) {
@@ -53,72 +50,59 @@ public class BoardVO {
 		return no;
 	}
 
-
 	public void setNo(int no) {
 		this.no = no;
 	}
-
 
 	public String getWriter() {
 		return writer;
 	}
 
-
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-
 
 	public String getTitle() {
 		return title;
 	}
 
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 	public String getContent() {
 		return content;
 	}
 
-
 	public void setContent(String content) {
 		this.content = content;
 	}
-
 
 	public LocalDate getCreateDate() {
 		return createDate;
 	}
 
-
 	public void setCreateDate(LocalDate createDate) {
 		this.createDate = createDate;
 	}
-
 
 	public LocalDate getModifyDate() {
 		return modifyDate;
 	}
 
-
 	public void setModifyDate(LocalDate modifyDate) {
 		this.modifyDate = modifyDate;
 	}
-
 
 	public int getHits() {
 		return hits;
 	}
 
-
 	public void setHits(int hits) {
 		this.hits = hits;
 	}
 
-
+	
 	@Override
 	public String toString() {
 		return "BoardVO [no=" + no + ", writer=" + writer + ", title=" + title + ", content=" + content
@@ -126,5 +110,5 @@ public class BoardVO {
 	}
 	
 	
-
+	
 }
