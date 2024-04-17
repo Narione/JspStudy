@@ -23,11 +23,11 @@ public class BoardService {
 		return dao.insertBoard(vo);
 	}
 	
-	public void updateBoard(BoardVO vo) {
-		dao.updateBoard(vo);
-	}
-	
-	public void deleteBoard(int deleteNo) {
-		dao.deleteBoard(deleteNo);
-	}
+//	public void updateBoard(BoardVO vo) {
+//		dao.updateBoard(vo);
+//	}
+//	
+//	public void deleteBoard(int deleteNo) {
+//		dao.deleteBoard(deleteNo);
+//	}
 }

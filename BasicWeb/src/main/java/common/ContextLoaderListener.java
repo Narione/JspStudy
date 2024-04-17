@@ -7,9 +7,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import javax.sql.DataSource;
 
-import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
-import org.apache.tomcat.jdbc.pool.DataSource;
 
 @WebListener
 public class ContextLoaderListener implements ServletContextListener {

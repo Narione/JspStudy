@@ -9,7 +9,7 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
+  <!-- <servlet>
 		<servlet-name>initServ</servlet-name>
 		<servlet-class>chapter17.InitServlet</servlet-class>
   </servlet>
@@ -41,7 +41,7 @@
   			<param-name>poolName</param-name>
   			<param-value>chapter17</param-value>
   		</init-param>
-  		<!-- <load-on-startup>1</load-on-startup> -->
+  		<load-on-startup>1</load-on-startup>
   </servlet>
   
   <servlet>
@@ -50,7 +50,7 @@
   		<load-on-startup>2</load-on-startup>
   </servlet>
   
-<!--   <filter>
+	<filter>
   	<filter-name>encodingFilter</filter-name>
   	<filter-class>common.CharacterEncodingFilter</filter-class>
   	<init-param>

@@ -5,15 +5,9 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>Index</title>
 </head>
 <body>
-hello
-<!-- Scriptlet 스크립틀릿 -->
-<% 
-	LocalDateTime now = LocalDateTime.now();
-%>
-<!-- 표현식(Expression) -->
-<%=now %>
+<jsp:forward page="/member/list"></jsp:forward>
 </body>
 </html>
