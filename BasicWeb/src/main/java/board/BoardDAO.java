@@ -39,6 +39,7 @@ public class BoardDAO {
 				from
 					board a
 					inner join member b on a.writer = b.id
+				order by a.create_date desc
 				""";
 		statement = connection.prepareStatement(sql);
 		resultSet = statement.executeQuery();

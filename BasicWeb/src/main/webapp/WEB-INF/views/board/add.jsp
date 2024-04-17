@@ -6,7 +6,7 @@
 
 </jsp:include>
 
-	<form action="/board/insert" method="post">
+	<form action="/board/add" method="post">
 		<label>제목 :
 			<input type="text" name="title">
 		</label>
